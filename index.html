@@ -34,7 +34,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   </head>
   <body class="page__body">
@@ -100,24 +103,38 @@
           </div>
         </div>
       </div>
-      <div data-aos="fade-up" class="header__image header__image--mob"></div>
+      <div
+        data-aos="fade-up"
+        class="header__image header__image--mob"
+      ></div>
       <div class="container header__content-container">
         <div class="header__text">
-          <h1 data-aos="fade-up" data-lang="futuristic">Futuristic Wireless Speaker</h1>
+          <h1
+            data-aos="fade-up"
+            data-lang="futuristic"
+          >
+            Futuristic Wireless Speaker
+          </h1>
           <p data-aos="fade-up">
             Luna’s performance is balanced and smooth in all frequency ranges
             which makes the music both naturally pleasant and distinctly more
             layered.
           </p>
         </div>
-        <div data-aos="fade-up" class="header__image header__image--tab-desktop"></div>
+        <div
+          data-aos="fade-up"
+          class="header__image header__image--tab-desktop"
+        ></div>
       </div>
     </header>
     <main
       data-lang="22"
       class="main"
     >
-      <section data-aos="fade-up" class="section-benefits">
+      <section
+        data-aos="fade-up"
+        class="section-benefits"
+      >
         <div class="section-benefits__swiper">
           <div class="swiper section-benefits__my-swiper">
             <div class="swiper-wrapper section-benefits__swiper-wrapper">
@@ -258,7 +275,8 @@
         </div>
       </section>
 
-      <section data-aos="fade-up"
+      <section
+        data-aos="fade-up"
         id="presentation"
         class="section-presentation"
       >
@@ -266,7 +284,7 @@
       </section>
 
       <section
-      data-aos="fade-up"
+        data-aos="fade-up"
         id="about-us"
         class="section-about-us"
       >
@@ -294,7 +312,10 @@
         </div>
       </section>
 
-      <section data-aos="fade-up" class="section-about-us">
+      <section
+        data-aos="fade-up"
+        class="section-about-us"
+      >
         <div class="container section-about-us__container">
           <h2 class="section-about-us__title section-about-us__title--2">
             DESIGNED FOR THE FUTURE
@@ -320,7 +341,10 @@
         </div>
       </section>
 
-      <section data-aos="fade-up" class="section-testimonilas">
+      <section
+        data-aos="fade-up"
+        class="section-testimonilas"
+      >
         <div class="container">
           <div class="section-testimonilas__content">
             <div class="section-testimonilas__background"></div>
@@ -339,7 +363,7 @@
       </section>
 
       <section
-      data-aos="fade-up"
+        data-aos="fade-up"
         id="features"
         class="section-features"
       >
@@ -500,7 +524,7 @@
       </section>
 
       <section
-      data-aos="fade-up"
+        data-aos="fade-up"
         id="questions"
         class="questions"
       >
@@ -783,12 +807,17 @@
     </script>
 
     <script>
+      const form = document.querySelector('form');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.reset();
+      });
+
       const btn = document.querySelector('.footer__button-up');
 
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
-
-        console.log(scrollY);
 
         if (window.scrollY > 100) {
           btn.classList.add('footer__button-up__show');
