@@ -376,7 +376,7 @@
           </div>
           <div class="section-features__swiper">
             <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
+              <div class="swiper-wrapper section-features__wrapper">
                 <div class="swiper-slide section-features__slide">
                   <h3 class="section-features__slide-title">Connectivity</h3>
                   <ul class="section-features__slide-list">
@@ -732,15 +732,41 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <script>
+      const slides = document.querySelectorAll(
+        '.benefit__container--height-280',
+      );
+
+      const resizeSlide = () => {
+        let maxHeightSlide = 0;
+        console.log(maxHeightSlide);
+
+        slides.forEach((item) => {
+          item.style.height = 'auto';
+        });
+
+        slides.forEach((item) => {
+          maxHeightSlide = Math.max(maxHeightSlide, item.clientHeight);
+        });
+
+        maxHeightSlide += 20;
+        console.log(maxHeightSlide);
+
+        slides.forEach((item) => {
+          item.style.height = maxHeightSlide + 'px';
+        });
+      };
+      resizeSlide();
+      window.addEventListener('resize', resizeSlide);
+
       var swiper = new Swiper('.section-benefits__my-swiper', {
         pagination: {
           el: '.swiper-pagination',
         },
         loop: true,
 
-        autoplay: {
-          delay: 2500,
-        },
+        // autoplay: {
+        //   delay: 2500,
+        // },
         speed: 600,
 
         updateOnWindowResize: false,
@@ -752,7 +778,6 @@
           },
         },
       });
-
       let resizeTimer;
 
       window.addEventListener('resize', () => {
